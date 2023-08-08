@@ -19,7 +19,7 @@ export const MyChatList = ({chat,selectedChat,setSelectedChat,loggedUser}) => {
           onClick={() => setSelectedChat(chat)}
           sx={{
             cursor: "pointer",
-            background: `${selectedChat === chat ? "#38B2AC" : ""}`,
+            background: `${selectedChat === chat ? "#38B2AC" : "#E8E8E8"}`,
             color: `${selectedChat === chat ? "white" : "black"}`,
             borderRadius: "5px",
           }}
