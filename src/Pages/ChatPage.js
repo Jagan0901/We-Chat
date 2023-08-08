@@ -19,7 +19,7 @@ export const ChatPage = () => {
         justifyContent:'space-between',
         w:'100%',
         h:'91.5vh',
-        p:'20px'
+        p:'10px'
       }}>
 
         {user && <MyChats/>}

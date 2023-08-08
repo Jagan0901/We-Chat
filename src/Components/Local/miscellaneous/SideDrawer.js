@@ -15,12 +15,13 @@ import { ChatState } from "../../../Context/ChatProvider";
 import { API } from "../../../api";
 import { ChatLoading } from "../ChatLoading";
 import { UserListItem } from "../UsersAvatar/UserListItem";
+import { Loading } from "../Loading";
 
 
 
 
 export const SideDrawer = () => {
-  const {user} = ChatState();
+  const {user, setSelectedChat, chats, setChats} = ChatState();
 
   const [open, setOpen] = useState(false);
   const [search,setSearch] = useState("");
@@ -60,7 +61,7 @@ export const SideDrawer = () => {
           setLoading(false);
         }else{
           setSearchResult(res);
-          console.log(res);
+          // console.log(res);
           setUsersNotFound(true);
           setLoading(false);
         }
@@ -73,7 +74,40 @@ export const SideDrawer = () => {
     
   };
 
-  const accessChat = (userId)=>{};
+  const accessChat = (userId)=>{
+    setLoadingChat(true);
+    const id = user._id;
+    const data = {
+      loggedInUserId: id,
+      userId: userId,
+    };
+
+    fetch(`${API}/chats/singleChat`,{
+      method:"POST",
+      body:JSON.stringify(data),
+      headers:{"Content-type": "application/json", "x-auth-token":`${user.token}`}
+    })
+      .then((res)=>res.json())
+      .then((res)=>{
+        if(res.error){
+          setError(true);
+          setErrorMessage(res.error);
+          setLoadingChat(false);
+        }else{
+          if(!chats.find((c)=> c._id === res._id)) setChats([res, ...chats])
+          setSelectedChat(res);
+          // console.log(chats);
+          setLoadingChat(false);
+          handleDrawerClose();
+        }
+      })
+      .catch((err)=>{
+        setError(true);
+        setErrorMessage(err.message);
+        setLoadingChat(false);
+      })
+
+  };
 
   return (
     <>
@@ -91,7 +125,7 @@ export const SideDrawer = () => {
         <Tooltip title="Search Users to chat" placement="bottom-end">
           <IconButton onClick={handleDrawerOpen}>
             <PersonSearchIcon fontSize="large" />
-            <span style={{ fontSize: "15px", fontWeight: "bolder" }}>
+            <span className="search-user-span" style={{ fontSize: "15px", fontWeight: "bolder" }}>
               Search User
             </span>
           </IconButton>
@@ -157,7 +191,7 @@ export const SideDrawer = () => {
         <Snackbar
           open={error}
           autoHideDuration={6000}
-          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           onClose={() => setError(false)}
         >
           <Alert
@@ -170,6 +204,7 @@ export const SideDrawer = () => {
             {errorMessage}
           </Alert>
         </Snackbar>
+        {loadingChat && <Loading/>}
       </Drawer>
     </>
   );
