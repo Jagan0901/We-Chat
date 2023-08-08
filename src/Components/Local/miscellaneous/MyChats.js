@@ -59,9 +59,9 @@ export const MyChats = () => {
         alignItems="center"
         backgroundColor="white"
         borderRadius="5px"
-        borderwidth="1px"
         width="30%"
-        height="565px"
+        height="585px"
+        marginRight="7px"
         sx={{
           padding: 3,
           "@media (max-width: 600px)": {
