@@ -23,6 +23,32 @@
   /* justify-content: space-around; */
 }
 
+
+.single-chat{
+  font-size: 30px;
+  padding-bottom: 3;
+  width: 100%;
+  font-family: Work sans;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .single-chat{
+    font-size: 28px;
+    justify-content: space-between;
+  }
+
+  .empty{
+    display: none;
+  }
+  
+}
+
+
+
+
 ::-webkit-scrollbar {
   width: 0px;
 }

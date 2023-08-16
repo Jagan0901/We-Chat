@@ -39,7 +39,7 @@ export const MyChatList = ({chat,selectedChat,setSelectedChat,loggedUser}) => {
                   component="span"
                   variant="body2"
                   color="text.primary"
-                  fontWeight="450"
+                  fontWeight={selectedChat===chat ? "500" : "390"}
                 >
                   Email
                 </Typography>

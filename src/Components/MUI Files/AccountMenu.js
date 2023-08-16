@@ -72,7 +72,12 @@ export const AccountMenu = () => {
   }
   return (
     <>
-    <DialogBox user={user} open={openDialog} handleClose={handleDialogClose} /> 
+      <DialogBox
+        user={user}
+        open={openDialog}
+        handleClose={handleDialogClose}
+        isThisYourProfile={"yes"}
+      />
       <Tooltip title="Account settings">
         <IconButton
           onClick={handleClick}
@@ -123,9 +128,9 @@ export const AccountMenu = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        
         <MenuItem onClick={handleClickOpen}>
-          <Avatar alt={user.name} src={user.pic} />Profile
+          <Avatar alt={user.name} src={user.pic} />
+          Profile
         </MenuItem>
         <Divider />
 

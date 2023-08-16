@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { ChatState } from "../../../Context/ChatProvider"
+import { SingleChat } from "../SingleChat";
 
 
 export const ChatBox = () => {
@@ -21,7 +22,7 @@ export const ChatBox = () => {
         },
       }}
     >
-      Single Chat
+      <SingleChat/>
     </Box>
   );
 }
