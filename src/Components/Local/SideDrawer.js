@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
-import { AccountMenu } from "../../MUI Files/AccountMenu";
+import { AccountMenu } from "../MUI Files/AccountMenu";
 import { useState } from "react";
 import Drawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -11,11 +11,11 @@ import Button from "@mui/material/Button";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import { ChatState } from "../../../Context/ChatProvider";
-import { API } from "../../../api";
-import { ChatLoading } from "../ChatLoading";
-import { UserListItem } from "../UsersAvatar/UserListItem";
-import { Loading } from "../Loading";
+import { ChatState } from "../../Context/ChatProvider";
+import { API } from "../../api";
+import { ChatLoading } from "./ChatLoading";
+import { UserListItem } from "./UsersAvatar/UserListItem";
+import { Loading } from "./Loading";
 
 
 

@@ -10,7 +10,7 @@ import { getSenderName, getSenderPic } from "../helper";
 
 
 export const MyChatList = ({chat,selectedChat,setSelectedChat,loggedUser}) => {
-    console.log(chat);
+
   return (
     <>
       <List sx={{ paddingBottom: "0px" }}>

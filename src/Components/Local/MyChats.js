@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { ChatState } from "../../../Context/ChatProvider"
-import { API } from "../../../api";
+import { ChatState } from "../../Context/ChatProvider"
+import { API } from "../../api";
 import { Box } from "@mui/material";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import { ChatLoading } from './../ChatLoading';
-import { MyChatList } from "../UsersAvatar/MyChatList";
+import { ChatLoading } from './ChatLoading';
+import { MyChatList } from "./UsersAvatar/MyChatList";
 import Stack from "@mui/material/Stack";
 
 
@@ -45,7 +45,6 @@ export const MyChats = () => {
         setErrorMessage(err.message);
       })
   };
-  console.log(chats);
 
   useEffect(()=> {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));

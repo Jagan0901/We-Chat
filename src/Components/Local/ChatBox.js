@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { ChatState } from "../../../Context/ChatProvider"
-import { SingleChat } from "../SingleChat";
+import { ChatState } from "../../Context/ChatProvider"
+import { SingleChat } from "./SingleChat";
 
 
 export const ChatBox = () => {
@@ -8,13 +8,13 @@ export const ChatBox = () => {
   return (
     <Box
       display="flex"
-      width="63%"
+      width="65%"
       alignItems="center"
       flexDirection="column"
       bgcolor="white"
       borderRadius="5px"
-      height="585px"
-      p={3}
+      height="616px"
+      p={1}
       sx={{
         "@media (max-width: 600px)": {
           display: selectedChat ? "flex" : "none",

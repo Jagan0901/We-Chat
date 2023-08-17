@@ -1,6 +1,6 @@
-import { SideDrawer } from "./../Components/Local/miscellaneous/SideDrawer";
-import { MyChats } from "../Components/Local/miscellaneous/MyChats";
-import { ChatBox } from "./../Components/Local/miscellaneous/ChatBox";
+import { SideDrawer } from "./../Components/Local/SideDrawer";
+import { MyChats } from "../Components/Local/MyChats";
+import { ChatBox } from "./../Components/Local/ChatBox";
 import { Box } from "@mui/material";
 import { ChatState } from "../Context/ChatProvider";
 
