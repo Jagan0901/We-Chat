@@ -106,7 +106,7 @@ export const SideDrawer = () => {
         setLoadingChat(false);
       })
 
-  };
+  }; 
 
   return (
     <>
