@@ -1,7 +1,7 @@
 import { ChatState } from "../../Context/ChatProvider";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import {getSenderName ,getSenderFull } from "./helper";
+import {getSenderName ,getSenderFull } from "./config/helper";
 import CircularProgress from "@mui/material/CircularProgress";
 import { UserProfile } from "../MUI Files/UserProfile";
 import { Box } from '@mui/material';
