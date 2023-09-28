@@ -127,7 +127,7 @@ export const SingleChat = () => {
                 justifyContent: "flex-end",
                 background: "#E8E8E8",
                 width: "97%",
-                height: "100%",
+                height: "520px",
                 borderRadius: "5px",
               }}
             >
